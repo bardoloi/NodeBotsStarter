@@ -34,12 +34,20 @@ var wheels = {
         // console.log("Back");
     },
     fastLeft: function(){
-        wheels.left.ccw(0.25);
+        wheels.left.ccw(0.1);
         wheels.right.cw(1);
     },
     fastRight: function(){
         wheels.left.ccw(1);
-        wheels.right.cw(0.25);
+        wheels.right.cw(0.1);
+    },
+    fastBackLeft: function(){
+        wheels.left.cw(0.1);
+        wheels.right.ccw();
+    },
+    fastBackRight: function(){
+        wheels.left.cw();
+        wheels.right.ccw(0.1);
     }
 };
 
@@ -57,16 +65,22 @@ var move = function(chunk, key) {
             wheels.back();
             break;            
         
-        case 'a':
+        case 'q':
             wheels.fastLeft();
+            break;            
+        case 'a':
+            wheels.fastBackLeft();
             break;            
         case 'left':
             wheels.pivotLeft();
             break;            
         
-        case 'd':
+        case 'e':
             wheels.fastRight();
             break;
+        case 'd':
+            wheels.fastBackRight();
+            break;            
         case 'right':
             wheels.pivotRight();
             break;
