@@ -9,7 +9,7 @@ board.on("ready", function() {
   // "blink" the led in X ms on-off phase periods
 
   // Create a standard `led` component instance  
-  var servo = new five.Servo(10);
+  var servo = new five.Servo(9);
 
   // this.repl.inject({
   // 	servo: servo
