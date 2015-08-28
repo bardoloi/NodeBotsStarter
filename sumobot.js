@@ -5,21 +5,24 @@ var stdin = process.stdin;
 stdin.setRawMode(true);
 stdin.resume();
 
-var leftServoConfig = { pin: 11, type: 'continuous', startAt: 0 };
-var rightServoConfig = { pin: 9, type: 'continuous', startAt: 0 };
-var frontServoConfig = { pin: 10, type: 'continuous', startAt: 0 };
+// L: 11, R: 10, F: 9
 
-var frontWeapons = {
-    stop: function () {
-        frontWeapons.left.center();
-    },
-    rollDown: function () {
-        frontWeapons.left.ccw();
-    },
-    rollUp: function () {
-        frontWeapons.left.cw();
-    }
-};
+var leftServoConfig = { pin: 11, type: 'continuous', startAt: 0 };
+var rightServoConfig = { pin: 10, type: 'continuous', startAt: 0 };
+
+// var frontServoConfig = { pin: 9, type: 'continuous', startAt: 0 };
+
+// var frontWeapons = {
+//     stop: function () {
+//         frontWeapons.left.center();
+//     },
+//     rollDown: function () {
+//         frontWeapons.left.ccw;
+//     },
+//     rollUp: function () {
+//         frontWeapons.left.cw;
+//     }
+// };
 
 var wheels = {
     stop: function () {
@@ -64,24 +67,6 @@ var move = function(chunk, key) {
     if (!key) return;
     
     switch (key.name) {
-        case 'z':
-        case 'b':
-            frontWeapons.rollDown();
-            console.log("rollDown");
-            break;
-
-        case 'x':
-        case 'n':
-            frontWeapons.rollUp();
-            console.log("rollUp");            
-            break;
-
-        case 'c':
-        case 'm':
-            frontWeapons.stop();
-            console.log("weapons stop");
-            break;
-
         case 'w':
         case 'up':
             wheels.forward();
@@ -128,6 +113,25 @@ var move = function(chunk, key) {
         case 'escape':
             wheels.stop();
             break;
+
+        // weapons
+        // case 'z':
+        // case 'b':
+        //     frontWeapons.rollDown();
+        //     console.log("weapons rollDown");
+        //     break;
+
+        // case 'x':
+        // case 'n':
+        //     frontWeapons.rollUp();
+        //     console.log("weapons rollUp");            
+        //     break;
+
+        // case 'c':
+        // case 'm':
+        //     frontWeapons.stop();
+        //     console.log("weapons stop");
+        //     break;
     }
 };
 
@@ -137,10 +141,10 @@ var initializeWheels = function(){
     wheels.stop();
 };
 
-var initializeWeapons = function(){
-    frontWeapons.left = new five.Servo(frontServoConfig),
-    frontWeapons.stop();
-};
+// var initializeWeapons = function(){
+//     frontWeapons.left = new five.Servo(frontServoConfig),
+//     frontWeapons.stop();
+// };
 
 var boardOperation = function () {
     initializeWheels();    
