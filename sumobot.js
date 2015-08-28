@@ -7,8 +7,7 @@ stdin.resume();
 
 var leftServoConfig = { pin: 11, type: 'continuous', startAt: 0 };
 var rightServoConfig = { pin: 9, type: 'continuous', startAt: 0 };
-
-var frontServoConfig = { pin: 10 }; //, type: 'continuous', startAt: 0 };
+var frontServoConfig = { pin: 10, type: 'continuous', startAt: 0 };
 
 var frontWeapons = {
     stop: function () {
@@ -148,9 +147,6 @@ var boardOperation = function () {
 //    initializeWeapons();
     console.log("Use the cursor keys or QWEASD to move your bot. Hit escape or the spacebar to stop.");
   
-    var servo = new five.Servo(10);
-    servo.sweep();
-
     stdin.on("keypress", move);
 };
 
