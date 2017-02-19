@@ -3,11 +3,11 @@ Simple starter project for Node Bots (see http://nodebots.io/ and  http://johnny
 
 
 # Resources
-* [NodeBots][http://nodebots.io/]
-* [Johnny Five][http://johnny-five.io/]
-* [CodeSmash][http://nodebots.codemash.org/]
-* [CodeSmash Getting Started][http://nodebots.codemash.org/tut/getting-started.html]
-* [Hello World & Other Johnny 5 Examples][http://johnny-five.io/examples/]
+* [NodeBots](http://nodebots.io/)
+* [Johnny Five](http://johnny-five.io/)
+* [CodeSmash](http://nodebots.codemash.org/)
+* [CodeSmash Getting Started](http://nodebots.codemash.org/tut/getting-started.html)
+* [Hello World & Other Johnny 5 Examples](http://johnny-five.io/examples/)
 
 # How To
 ## Basic Circuits and Programming Them With Johnny-Five
